@@ -1,17 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
+﻿using System.Linq;
 using System.Web.Http;
-using AdminToolsAPI.DAL;
 using AdminToolsAPI.Models;
 
 namespace AdminToolsAPI.Controllers
 {
     public class TestController : ApiController
     {
-        private Context db = new Context();
+        private ApplicationDbContext db = new ApplicationDbContext();
 
         public IHttpActionResult GetAllModels()
         {

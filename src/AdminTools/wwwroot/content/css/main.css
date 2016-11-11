@@ -1,0 +1,29 @@
+body {
+  margin: 0px;
+}
+.nav-menu {
+  width: 200px;
+}
+.nav-menu md-list-item {
+  height: 40px;
+}
+.nav-menu md-list-item .md-list-item {
+  height: inherit;
+}
+.nav-menu md-list-item md-icon {
+  height: auto;
+}
+#account-tabs {
+  width: 40%;
+  min-width: 600px;
+  margin: 20px auto;
+}
+#account-tabs .md-tab-label i.material-icons {
+  vertical-align: middle;
+}
+#account-tabs .md-tab-body md-input {
+  width: 100%;
+}
+.fill-remaining-space {
+  flex: 1 1 auto;
+}

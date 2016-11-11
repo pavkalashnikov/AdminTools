@@ -1,11 +1,26 @@
-﻿<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <title></title>
-</head>
-<body>
-    <h1>{{title}}!!!!!!!!!!!!!!!!</h1>
-    <button md-raised-button>CLICK ME!!!</button>
-</body>
-</html>
+﻿<md-toolbar color="primary">
+    <button md-icon-button (click)="sidenav.toggle()"><i class="material-icons">menu</i></button>
+    <span>Admin Tools</span>
+    <span class="fill-remaining-space"></span>
+    <button md-button routerLink="" routerLinkActive="active">Home</button>
+    <button md-button routerLink="/account" routerLinkActive="active">Log In</button>
+
+</md-toolbar>
+<md-sidenav-layout>
+    <md-sidenav class="nav-menu" #sidenav>
+        <md-list>
+            <md-list-item md-button routerLink="" routerLinkActive="active">
+                <md-icon md-list-avatar>home</md-icon>
+                <h1 md-line>Home</h1>
+            </md-list-item>
+            <md-list-item md-button (click)="sidenav.close()">
+                <md-icon md-list-avatar>clear</md-icon>
+                <h3 md-line>Close</h3>
+            </md-list-item>
+        </md-list>
+    </md-sidenav>
+
+    <router-outlet></router-outlet>
+
+
+</md-sidenav-layout>

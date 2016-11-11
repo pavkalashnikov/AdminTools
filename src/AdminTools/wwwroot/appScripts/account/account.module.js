@@ -8,37 +8,38 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-///<reference path="../node_modules/typescript/lib/lib.es6.d.ts"/> 
 var core_1 = require('@angular/core');
-var platform_browser_1 = require('@angular/platform-browser');
-var material_1 = require('@angular/material');
+var common_1 = require('@angular/common');
 var forms_1 = require('@angular/forms');
 var http_1 = require('@angular/http');
-var app_routing_module_1 = require('./app-routing.module');
-var account_module_1 = require('./account/account.module');
-var app_component_1 = require('./app.component');
-var home_component_1 = require('./home.component');
-var AppModule = (function () {
-    function AppModule() {
+var material_1 = require('@angular/material');
+var register_component_1 = require('./register.component');
+var account_component_1 = require('./account.component');
+var login_component_1 = require('./login.component');
+var validation_directive_1 = require('../directives/validation.directive');
+var AccountModule = (function () {
+    function AccountModule() {
     }
-    AppModule = __decorate([
+    AccountModule = __decorate([
         core_1.NgModule({
             imports: [
-                platform_browser_1.BrowserModule,
-                material_1.MaterialModule.forRoot(),
-                app_routing_module_1.AppRoutingModule,
+                common_1.CommonModule,
                 forms_1.FormsModule,
                 http_1.HttpModule,
-                account_module_1.AccountModule
+                material_1.MaterialModule.forRoot()
             ],
             declarations: [
-                app_component_1.AppComponent,
-                home_component_1.HomeComponent
+                account_component_1.AccountComponent,
+                register_component_1.RegisterComponent,
+                login_component_1.LoginComponent,
+                validation_directive_1.ValidationDirective
             ],
-            bootstrap: [app_component_1.AppComponent]
+            exports: [
+                account_component_1.AccountComponent
+            ]
         }), 
         __metadata('design:paramtypes', [])
-    ], AppModule);
-    return AppModule;
+    ], AccountModule);
+    return AccountModule;
 }());
-exports.AppModule = AppModule;
+exports.AccountModule = AccountModule;
