@@ -97,16 +97,19 @@ IF /I "%IN_PLACE_DEPLOYMENT%" NEQ "1" (
 :: 2. Select node version
 call :SelectNodeVersion
 
+echo Trying to install npm packages
 :: 3. Install npm packages
-IF EXIST "%DEPLOYMENT_TARGET%\package.json" (
+IF EXIST "src\AdminTools\package.json" (
+  echo Installing npm packages
   pushd "%DEPLOYMENT_TARGET%"
   call :ExecuteCmd !NPM_CMD! install --production
   IF !ERRORLEVEL! NEQ 0 goto error
   popd
 )
 
+echo Trying to run gulp task
 :: 3. run gulp task
-IF EXIST "Gulpfile.js" (
+IF EXIST "src\AdminTools\Gulpfile.js" (
  echo run gulp task
  pushd "%DEPLOYMENT_TARGET%"
  call .\node_modules\.bin\gulp production
