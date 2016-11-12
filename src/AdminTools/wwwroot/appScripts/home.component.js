@@ -14,7 +14,7 @@ var HomeComponent = (function () {
     }
     HomeComponent = __decorate([
         core_1.Component({
-            template: "\n        <h1>Home page</h1>\n    ",
+            template: "\n        <h1>Here is sample application written whith Angular2 to demonstrate Azure Hosting/CI</h1>\n    ",
             styles: ['h1 {margin: 0 auto; width: 200px; text-align: center}']
         }), 
         __metadata('design:paramtypes', [])

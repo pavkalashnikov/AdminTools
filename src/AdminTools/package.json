@@ -6,6 +6,7 @@
     "typings": "typings"
   },
   "dependencies": {
+    "gulp": "^3.9.1",
     "@angular/common": "~2.0.1",
     "@angular/compiler": "~2.0.1",
     "@angular/core": "~2.0.1",
