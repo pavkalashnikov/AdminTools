@@ -109,7 +109,7 @@ IF EXIST "%DEPLOYMENT_TARGET%\package.json" (
 IF EXIST "Gulpfile.js" (
  echo run gulp task
  pushd "%DEPLOYMENT_TARGET%"
- call .\node_modules\.bin\gulp imagemin
+ call .\node_modules\.bin\gulp production
  IF !ERRORLEVEL! NEQ 0 goto error
  popd
  

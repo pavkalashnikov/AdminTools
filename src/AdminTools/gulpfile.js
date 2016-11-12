@@ -68,3 +68,4 @@ gulp.task('watch.less', ['less'], function () {
 });
 
 gulp.task('default', ['scriptsNStyles', 'watch']);
+gulp.task('production', ['scriptsNStyles']);
