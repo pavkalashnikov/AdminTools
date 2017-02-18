@@ -1,11 +1,12 @@
-{
+﻿{
   "dependencies": {
+    "ExtCore.Data": "1.1.0",
+    "ExtCore.Data.EntityFramework.SqlServer": "1.1.0",
     "ExtCore.Mvc": "1.1.0",
     "ExtCore.WebApplication": "1.1.0",
     "Microsoft.AspNetCore.Diagnostics": "1.0.0",
     "Microsoft.AspNetCore.Server.IISIntegration": "1.0.0",
     "Microsoft.AspNetCore.Server.Kestrel": "1.0.0",
-    "Microsoft.AspNetCore.StaticFiles": "1.1.0",
     "Microsoft.Extensions.Configuration.Json": "1.1.0",
     "Microsoft.Extensions.Logging.Console": "1.0.0",
     "Microsoft.NETCore.App": {
@@ -47,5 +48,6 @@
 
   "scripts": {
     "postpublish": [ "dotnet publish-iis --publish-folder %publish:OutputPath% --framework %publish:FullTargetFramework%" ]
-  }
+  },
+  "userSecretsId": "aspnet-AdminToolsCore-20170213094407"
 }

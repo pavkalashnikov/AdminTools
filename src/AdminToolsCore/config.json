@@ -1,0 +1,10 @@
+﻿{
+  "Extensions": {
+    "Path": "\\Extensions"
+  },
+  "Data": {
+    "DefaultConnection": {
+      "ConnectionString": "Data Source=(LocalDb)\\MSSQLLocalDB;Initial Catalog=AdminToolsDB;Integrated Security=True"
+    }
+  }
+}

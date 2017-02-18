@@ -1,0 +1,20 @@
+﻿{
+  "version": "1.0.0-*",
+
+  "dependencies": {
+    "ExtCore.Mvc.Infrastructure": "1.1.0",
+    "Extension.Data.Abstractions": "1.0.0",
+    "Microsoft.AspNetCore.Mvc": "1.1.0",
+    "Microsoft.EntityFrameworkCore": "1.0.0",
+    "NETStandard.Library": "1.6.1"
+  },
+
+  "frameworks": {
+    "netstandard1.6": {
+      "imports": "dnxcore50"
+    }
+  },
+  "scripts": {
+    "postcompile": "xcopy \"bin\\Debug\\netstandard1.6\\%project:Name%.dll\" \"..\\AdminToolsCore\\Extensions\\%project:Name%.dll\" /Y"
+  }
+}

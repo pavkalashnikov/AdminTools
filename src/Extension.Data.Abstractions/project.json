@@ -1,0 +1,18 @@
+﻿{
+  "version": "1.0.0-*",
+
+  "dependencies": {
+    "ExtCore.Data.Abstractions": "1.1.0",
+    "Extension.Data.Models": "1.0.0",
+    "NETStandard.Library": "1.6.1"
+  },
+
+  "frameworks": {
+    "netstandard1.6": {
+      "imports": "dnxcore50"
+    }
+  },
+  "scripts": {
+    "postcompile": "xcopy \"bin\\Debug\\netstandard1.6\\%project:Name%.dll\" \"..\\AdminToolsCore\\Extensions\\%project:Name%.dll\" /Y"
+  }
+}

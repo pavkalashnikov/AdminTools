@@ -2,37 +2,38 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ExtCore.Infrastructure;
+using ExtCore.WebApplication;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
 namespace AdminTools
 {
-    public class Startup
+    public class Startup : ExtCore.WebApplication.Startup
     {
-        // This method gets called by the runtime. Use this method to add services to the container.
-        // For more information on how to configure your application, visit http://go.microsoft.com/fwlink/?LinkID=398940
-        public void ConfigureServices(IServiceCollection services)
+        public override void ConfigureServices(IServiceCollection services)
         {
+            base.ConfigureServices(services);
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
+        public override void Configure(IApplicationBuilder app)
         {
-            loggerFactory.AddConsole();
+            base.Configure(app);
+        }
 
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-                app.UseStaticFiles();
-            }
+        public Startup(IServiceProvider serviceProvider) : base(serviceProvider)
+        {
+            this.serviceProvider.GetService<ILoggerFactory>().AddConsole();
 
-            //app.Run(async (context) =>
-            //{
-            //    await context.Response.WriteAsync("Hello World!");
-            //});
+            IConfigurationBuilder configurationBuilder = new ConfigurationBuilder()
+              .SetBasePath(this.serviceProvider.GetService<IHostingEnvironment>().ContentRootPath)
+              .AddJsonFile("config.json", optional: true, reloadOnChange: true);
+
+            this.configurationRoot = configurationBuilder.Build();
         }
     }
 }
